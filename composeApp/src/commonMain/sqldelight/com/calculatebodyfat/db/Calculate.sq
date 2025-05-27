@@ -1,0 +1,27 @@
+
+CREATE TABLE Calculate (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        weight INTEGER NOT NULL,
+        height INTEGER NOT NULL,
+        waist INTEGER NOT NULL,
+        neck INTEGER NOT NULL,
+        hip INTEGER NOT NULL,
+        gender TEXT NOT NULL,
+        bodyFat INTEGER NOT NULL,
+        fatMass INTEGER NOT NULL,
+        leanMass INTEGER NOT NULL,
+        result TEXT NOT NULL,
+        date TEXT NOT NULL,
+        isMetric INTEGER NOT NULL
+        );
+
+selectAll:
+SELECT * FROM Calculate;
+
+insert:
+INSERT INTO Calculate (weight, height, waist, neck, hip, gender, bodyFat, fatMass, leanMass, result, date, isMetric)
+VALUES
+(?,?,?,?,?,?,?,?,?,?,?,?);
+
+delete:
+DELETE FROM Calculate WHERE id = ?;

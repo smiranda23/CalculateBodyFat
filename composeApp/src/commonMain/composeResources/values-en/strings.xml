@@ -1,0 +1,83 @@
+<resources>
+
+
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+
+    <!--DIALOGS-->
+    <string name="delete_calcul">Delete calculation</string>
+    <string name="sure_delete_calcul">Are you sure you want to delete this calculation?</string>
+    <string name="delete">Delete</string>
+    <string name="cancel">Cancel</string>
+
+    <!--MESSAGES-->
+    <string name="error_empty_field">Please complete all fields correctly.</string>
+    <string name="error_waist">Waist must be greater than neck.</string>
+    <string name="error_sum_waist_hip">The sum of waist and hips must be greater than the neck.</string>
+    <string name="error_unknown">Unknown error.</string>
+
+    <!--RESULTS-->
+    <string name="essential">Essential</string>
+    <string name="athlete">Athlete</string>
+    <string name="healthy">Healthy</string>
+    <string name="average">Average</string>
+    <string name="overweight">Overweight</string>
+    <string name="obesity">Obesity</string>
+
+    <!--GENERIC SCREEN-->
+    <string name="results">Results</string>
+    <string name="result">Result</string>
+
+    <string name="state">State</string>
+    <string name="bodyFat">Body Fat</string>
+    <string name="fatMass">Fat Mass</string>
+    <string name="leanMass">Lean Mass</string>
+
+    <string name="weight">Weight</string>
+    <string name="height">Height</string>
+    <string name="gender">Gender</string>
+
+    <string name="waist">Waist</string>
+    <string name="neck">Neck</string>
+    <string name="hip">Hip</string>
+    <string name="see_history">See History</string>
+    <string name="close">Close</string>
+
+    <string name="details_calcul">Calculation details</string>
+
+    <!--INFO SCREEN-->
+    <string name="information">Information</string>
+
+    <string name="info_intro">This calculator estimates your body fat percentage using the U.S. Navy formula based on body measurements.</string>
+
+    <string name="info_section_1">What do you need?</string>
+
+    <string name="info_needs">• Weight\n• Height\n• Neck circumference\n• Waist circumference\n• (For women) Hip circumference\n\nYou can use either metric or imperial units. The app handles conversion automatically.\n</string>
+
+    <string name="info_section_2">How to measure</string>
+
+    <string name="info_how_to_measure">• Neck: just below the Adam's apple\n• Waist: at the navel level\n• Hips (only for women): at the widest part of the buttocks\n• Height and weight: in cm/kg or in/lb\n</string>
+
+    <string name="info_section_3">Understanding results</string>
+
+    <string name="info_results">The app will also show your fat mass, lean mass, and a category such as:\n• Essential\n• Athlete\n• Healthy\n• Average\n• Overweight\n• Obese</string>
+
+
+    <!--CALCUL SCREEN-->
+
+    <string name="metric_cm_kg">Metric (cm/kg)</string>
+    <string name="imperial_in_lb">Imperial (in/lb)</string>
+
+    <string name="calculator">Calculator</string>
+    <string name="complete_fields">Please complete all fields correctly.</string>
+
+    <string name="calculate">Calculate!</string>
+
+    <!--HISTORY SCREEN-->
+    <string name="empty_list">There is no calculation to display.</string>
+
+    <string name="history">History</string>
+    <string name="date">Date</string>
+
+
+</resources>

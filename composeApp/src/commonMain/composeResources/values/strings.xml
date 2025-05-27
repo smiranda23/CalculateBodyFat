@@ -1,0 +1,7 @@
+<resources>
+    <string name="imperial_in">in</string>
+    <string name="metrico_cm">cm</string>
+
+    <string name="imperial_lb">lb</string>
+    <string name="metrico_kg">kg</string>
+</resources>

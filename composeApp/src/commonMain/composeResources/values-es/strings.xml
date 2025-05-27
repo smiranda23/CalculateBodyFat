@@ -1,0 +1,79 @@
+<resources>
+
+    <!--DIALOGS-->
+    <string name="delete_calcul">Eliminar cálculo.</string>
+    <string name="sure_delete_calcul">¿Estás seguro de que deseas eliminar este cálculo?</string>
+    <string name="delete">Eliminar</string>
+    <string name="cancel">Cancelar</string>
+
+    <!--MESSAGES-->
+    <string name="error_empty_field">Por favor, completa todos los campos correctamente.</string>
+    <string name="error_waist">La cintura debe ser mayor que el cuello.</string>
+    <string name="error_sum_waist_hip">La suma de la cintura y la cadera debe ser mayor que el cuello.</string>
+    <string name="error_unknown">Error desconocido.</string>
+
+    <!--RESULTS-->
+    <string name="essential">Esencial</string>
+    <string name="athlete">Atleta</string>
+    <string name="healthy">Saludable</string>
+    <string name="average">Promedio</string>
+    <string name="overweight">Sobrepeso</string>
+    <string name="obesity">Obesidad</string>
+
+
+    <!--GENERIC SCREEN-->
+    <string name="results">Resultados</string>
+    <string name="result">Resultado</string>
+
+    <string name="state">Estado</string>
+    <string name="bodyFat">Grasa Corporal</string>
+    <string name="fatMass">Grasa Magra</string>
+    <string name="leanMass">Masa Magra</string>
+
+    <string name="weight">Peso</string>
+    <string name="height">Altura</string>
+    <string name="gender">Género</string>
+
+    <string name="waist">Cintura</string>
+    <string name="neck">Cuello</string>
+    <string name="hip">Cadera</string>
+    <string name="see_history">Ver Historial</string>
+    <string name="close">Cerrar</string>
+
+    <string name="details_calcul">Detalles de cáculo</string>
+
+    <!--INFO SCREEN-->
+    <string name="information">Información</string>
+
+    <string name="info_intro">Esta calculadora estima tu porcentaje de grasa corporal utilizando la fórmula de la Marina de los EE. UU., basada en mediciones corporales.</string>
+
+    <string name="info_section_1">¿Qué necesitas?</string>
+
+    <string name="info_needs">• Peso\n• Estatura\n• Circunferencia del cuello\n• Circunferencia de la cintura\n• (Para mujeres) Circunferencia de las caderas\n\nPuedes usar unidades métricas o imperiales. La app se encarga de la conversión automáticamente.\n</string>
+
+    <string name="info_section_2">Cómo medir</string>
+
+    <string name="info_how_to_measure">• Cuello: justo debajo de la nuez de Adán\n• Cintura: a la altura del ombligo\n• Caderas (solo para mujeres): en la parte más ancha de los glúteos\n• Estatura y peso: en cm/kg o en in/lb\n</string>
+
+    <string name="info_section_3">Comprendiendo los resultados</string>
+
+    <string name="info_results">La app también mostrará tu masa grasa, masa magra y una categoría como:\n• Esencial\n• Atleta\n• Saludable\n• Promedio\n• Sobrepeso\n• Obesidad</string>
+
+
+    <!--CALCUL SCREEN-->
+    <string name="metric_cm_kg">Métrico (cm/kg)</string>
+    <string name="imperial_in_lb">Imperial (in/lb)</string>
+
+    <string name="male">Hombre</string>
+    <string name="female">Mujer</string>
+
+    <string name="calculator">Calculadora</string>
+
+    <string name="calculate">!Calcular!</string>
+
+    <!--HISTORY SCREEN-->
+    <string name="empty_list">No hay ningún cálculo para mostrar.</string>
+
+    <string name="history">Historial</string>
+    <string name="date">Fecha</string>
+</resources>
