@@ -65,6 +65,7 @@ import calculatebodyfat.composeapp.generated.resources.weight
 import moe.tlaster.precompose.navigation.Navigator
 import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
+import org.smcompany.calculbodyfat.nativo.NativeTextField
 import org.smcompany.calculbodyfat.navigation.Routes
 import org.smcompany.calculbodyfat.styles.colorVerdeMilitar
 import org.smcompany.calculbodyfat.viewmodel.CalculViewModel
@@ -109,7 +110,7 @@ fun CalculBody(
 
         OptionsMaleFemale(calculViewModel)
 
-        OptionsCmMetric(calculViewModel)
+        OptionsMetricImperial(calculViewModel)
 
         val weight = calculViewModel.weight.value.toFloat()
         val height = calculViewModel.height.value.toFloat()
@@ -244,7 +245,7 @@ fun GenderOption(
 
 
 @Composable
-fun OptionsCmMetric(calculViewModel: CalculViewModel) {
+fun OptionsMetricImperial(calculViewModel: CalculViewModel) {
 
     val selectedUnit = calculViewModel.isMetric.value
 
@@ -399,12 +400,10 @@ fun Measurements(
     errorMessage: String,
     calculViewModel: CalculViewModel
 ) {
-
     val metricSelected = calculViewModel.isMetric.value
 
     val unit =
         if (metricSelected) stringResource(Res.string.metrico_cm) else stringResource(Res.string.imperial_in)
-
 
     Column(
         modifier = Modifier
@@ -412,50 +411,75 @@ fun Measurements(
             .padding(16.dp),
         verticalArrangement = Arrangement.spacedBy(16.dp)
     ) {
-        OutlinedTextField(
-            value = waist,
+        var myLabelWaist = stringResource(Res.string.waist) + " ($unit)"
+
+        NativeTextField(value = waist,
             onValueChange = onWaistChange,
-            label = { Text(stringResource(Res.string.waist) + " ($unit)") },
-            keyboardOptions = KeyboardOptions.Default.copy(keyboardType = KeyboardType.Number),
-            singleLine = true,
+            label = myLabelWaist,
             modifier = Modifier.fillMaxWidth(),
-            colors = TextFieldDefaults.colors(
-                focusedLabelColor = MaterialTheme.colorScheme.onBackground,
-                focusedIndicatorColor = Color.LightGray,
-                cursorColor = MaterialTheme.colorScheme.onBackground
-            )
+            backgroundColor = MaterialTheme.colorScheme.background
         )
 
-        OutlinedTextField(
-            value = neck,
+//        OutlinedTextField(
+//            value = waist,
+//            onValueChange = onWaistChange,
+//            label = { Text(stringResource(Res.string.waist) + " ($unit)") },
+//            keyboardOptions = KeyboardOptions.Default.copy(keyboardType = KeyboardType.Number),
+//            singleLine = true,
+//            modifier = Modifier.fillMaxWidth(),
+//            colors = TextFieldDefaults.colors(
+//                focusedLabelColor = MaterialTheme.colorScheme.onBackground,
+//                focusedIndicatorColor = Color.LightGray,
+//                cursorColor = MaterialTheme.colorScheme.onBackground
+//            )
+//        )
+
+        val myLabelNeck = stringResource(Res.string.neck) + " ($unit)"
+
+        NativeTextField(value = neck,
             onValueChange = onNeckChange,
-            label = { Text(stringResource(Res.string.neck) + " ($unit)") },
-            keyboardOptions = KeyboardOptions.Default.copy(keyboardType = KeyboardType.Number),
-            singleLine = true,
+            label = myLabelNeck,
             modifier = Modifier.fillMaxWidth(),
-            colors = TextFieldDefaults.colors(
-                focusedLabelColor = MaterialTheme.colorScheme.onBackground,
-                focusedIndicatorColor = Color.LightGray,
-                cursorColor = MaterialTheme.colorScheme.onBackground
-            )
+            backgroundColor = MaterialTheme.colorScheme.background
         )
+//        OutlinedTextField(
+//            value = neck,
+//            onValueChange = onNeckChange,
+//            label = { Text(stringResource(Res.string.neck) + " ($unit)") },
+//            keyboardOptions = KeyboardOptions.Default.copy(keyboardType = KeyboardType.Number),
+//            singleLine = true,
+//            modifier = Modifier.fillMaxWidth(),
+//            colors = TextFieldDefaults.colors(
+//                focusedLabelColor = MaterialTheme.colorScheme.onBackground,
+//                focusedIndicatorColor = Color.LightGray,
+//                cursorColor = MaterialTheme.colorScheme.onBackground
+//            )
+//        )
 
         if (!isMale) {
-            OutlinedTextField(
+            val myLabelHip = stringResource(Res.string.hip) + " ($unit)"
+
+            NativeTextField(
                 value = hip,
                 onValueChange = onHipChange,
-                label = { Text(stringResource(Res.string.hip) + " ($unit)") },
-                keyboardOptions = KeyboardOptions.Default.copy(keyboardType = KeyboardType.Number),
-                singleLine = true,
+                label = myLabelHip,
                 modifier = Modifier.fillMaxWidth(),
-                colors = TextFieldDefaults.colors(
-                    focusedLabelColor = MaterialTheme.colorScheme.onBackground,
-                    focusedIndicatorColor = Color.LightGray,
-                    cursorColor = MaterialTheme.colorScheme.onBackground
-                )
+                backgroundColor = MaterialTheme.colorScheme.background
             )
+//            OutlinedTextField(
+//                value = hip,
+//                onValueChange = onHipChange,
+//                label = { Text(stringResource(Res.string.hip) + " ($unit)") },
+//                keyboardOptions = KeyboardOptions.Default.copy(keyboardType = KeyboardType.Number),
+//                singleLine = true,
+//                modifier = Modifier.fillMaxWidth(),
+//                colors = TextFieldDefaults.colors(
+//                    focusedLabelColor = MaterialTheme.colorScheme.onBackground,
+//                    focusedIndicatorColor = Color.LightGray,
+//                    cursorColor = MaterialTheme.colorScheme.onBackground
+//                )
+//            )
         }
-
         Text(text = errorMessage, color = Color.Red)
     }
 }

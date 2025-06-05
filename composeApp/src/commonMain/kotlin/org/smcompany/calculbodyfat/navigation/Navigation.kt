@@ -29,8 +29,5 @@ fun MyNavigation(nav: Navigator) {
         scene(Routes.History.route) {
             HistoryScreen(nav, historyViewModel, Routes.History)
         }
-        scene(Routes.Settings.route) {
-            //SettingsScreen(nav)
-        }
     }
 }

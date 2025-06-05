@@ -17,7 +17,6 @@ val colorBackgroundBottomBar = Color.Black //GREEN VERY DARK
 
 val tintIconClicked = colorVerdeMilitar
 
-
 private val LightColors = lightColorScheme(
     background = colorBackgroundContent,
     surface = colorBackgroundContent,
@@ -27,7 +26,8 @@ private val LightColors = lightColorScheme(
 //MODO OSCURO
 
 private val DarkColors = darkColorScheme(
-    background = Color.DarkGray,
+    //background = Color.DarkGray,
+    background = Color(0xFF3f3f3f),
     surface = Color.DarkGray,
     onBackground = Color.White,
 )
