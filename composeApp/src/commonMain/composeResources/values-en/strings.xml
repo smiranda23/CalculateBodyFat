@@ -73,11 +73,18 @@
 
     <string name="calculate">Calculate!</string>
 
+
+
     <!--HISTORY SCREEN-->
     <string name="empty_list">There is no calculation to display.</string>
 
     <string name="history">History</string>
     <string name="date">Date</string>
+
+    <!--NAV ITEMS-->
+    <string name="info_navitem">Info</string>
+    <string name="calculate_navitem">Calculate</string>
+    <string name="history_navitem">History</string>
 
 
 </resources>

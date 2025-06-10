@@ -156,16 +156,6 @@ fun HistoryBody(
     ) {
         if (list.isNotEmpty()) {
             LazyColumn {
-                item {
-                    Text(
-                        text = stringResource(Res.string.history),
-                        style = MaterialTheme.typography.titleLarge,
-                        fontWeight = FontWeight.SemiBold,
-                        color = MaterialTheme.colorScheme.onBackground,
-                        modifier = Modifier.padding(start = 8.dp)
-                    )
-
-                }
                 items(list) {
                     ItemCalcul(it, historyViewModel)
                 }

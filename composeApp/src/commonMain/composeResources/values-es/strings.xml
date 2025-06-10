@@ -76,4 +76,9 @@
 
     <string name="history">Historial</string>
     <string name="date">Fecha</string>
+
+    <!--NAV ITEMS-->
+    <string name="info_navitem">Info</string>
+    <string name="calculate_navitem">Calcular</string>
+    <string name="history_navitem">Historial</string>
 </resources>

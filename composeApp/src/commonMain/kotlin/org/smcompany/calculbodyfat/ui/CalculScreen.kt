@@ -420,20 +420,6 @@ fun Measurements(
             backgroundColor = MaterialTheme.colorScheme.background
         )
 
-//        OutlinedTextField(
-//            value = waist,
-//            onValueChange = onWaistChange,
-//            label = { Text(stringResource(Res.string.waist) + " ($unit)") },
-//            keyboardOptions = KeyboardOptions.Default.copy(keyboardType = KeyboardType.Number),
-//            singleLine = true,
-//            modifier = Modifier.fillMaxWidth(),
-//            colors = TextFieldDefaults.colors(
-//                focusedLabelColor = MaterialTheme.colorScheme.onBackground,
-//                focusedIndicatorColor = Color.LightGray,
-//                cursorColor = MaterialTheme.colorScheme.onBackground
-//            )
-//        )
-
         val myLabelNeck = stringResource(Res.string.neck) + " ($unit)"
 
         NativeTextField(value = neck,
@@ -442,19 +428,6 @@ fun Measurements(
             modifier = Modifier.fillMaxWidth(),
             backgroundColor = MaterialTheme.colorScheme.background
         )
-//        OutlinedTextField(
-//            value = neck,
-//            onValueChange = onNeckChange,
-//            label = { Text(stringResource(Res.string.neck) + " ($unit)") },
-//            keyboardOptions = KeyboardOptions.Default.copy(keyboardType = KeyboardType.Number),
-//            singleLine = true,
-//            modifier = Modifier.fillMaxWidth(),
-//            colors = TextFieldDefaults.colors(
-//                focusedLabelColor = MaterialTheme.colorScheme.onBackground,
-//                focusedIndicatorColor = Color.LightGray,
-//                cursorColor = MaterialTheme.colorScheme.onBackground
-//            )
-//        )
 
         if (!isMale) {
             val myLabelHip = stringResource(Res.string.hip) + " ($unit)"
@@ -466,19 +439,6 @@ fun Measurements(
                 modifier = Modifier.fillMaxWidth(),
                 backgroundColor = MaterialTheme.colorScheme.background
             )
-//            OutlinedTextField(
-//                value = hip,
-//                onValueChange = onHipChange,
-//                label = { Text(stringResource(Res.string.hip) + " ($unit)") },
-//                keyboardOptions = KeyboardOptions.Default.copy(keyboardType = KeyboardType.Number),
-//                singleLine = true,
-//                modifier = Modifier.fillMaxWidth(),
-//                colors = TextFieldDefaults.colors(
-//                    focusedLabelColor = MaterialTheme.colorScheme.onBackground,
-//                    focusedIndicatorColor = Color.LightGray,
-//                    cursorColor = MaterialTheme.colorScheme.onBackground
-//                )
-//            )
         }
         Text(text = errorMessage, color = Color.Red)
     }

@@ -250,8 +250,8 @@ class CalculViewModel(private val repository: IGlobalRepository) : ViewModel() {
     }
 
     private fun createObjectAndInsert(
-        bodyFat: Int, fatMass: Int, leanMass: Int, waistFloat: Int,
-        neckFloat: Int, gender: String, hipFloat: Int = 0
+        bodyFat: Int, fatMass: Int, leanMass: Int, waist: Int,
+        neck: Int, gender: String, hip: Int = 0
     ) {
         val currentDate: String = getCurrentDateString()
         val result = getResult(gender, bodyFat)
@@ -259,9 +259,9 @@ class CalculViewModel(private val repository: IGlobalRepository) : ViewModel() {
         val c = Calcul(
             weight = _weight.value,
             height = _height.value,
-            waist = waistFloat,
-            neck = neckFloat,
-            hip = hipFloat,
+            waist = waist,
+            neck = neck,
+            hip = hip,
             gender = gender,
             bodyFat = bodyFat,
             fatMass = fatMass,
@@ -310,7 +310,6 @@ class CalculViewModel(private val repository: IGlobalRepository) : ViewModel() {
     fun hidePopUpResult() {
         _popUpResult.value = false
     }
-
 
 
     fun getCurrentDateString(): String {

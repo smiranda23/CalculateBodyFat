@@ -1,5 +1,6 @@
 package org.smcompany.calculbodyfat.ui
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -15,6 +16,7 @@ import androidx.compose.material.icons.filled.Info
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.BottomAppBar
 import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
@@ -28,6 +30,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -35,6 +38,7 @@ import calculatebodyfat.composeapp.generated.resources.Res
 import calculatebodyfat.composeapp.generated.resources.athlete
 import calculatebodyfat.composeapp.generated.resources.average
 import calculatebodyfat.composeapp.generated.resources.bodyFat
+import calculatebodyfat.composeapp.generated.resources.calculate_navitem
 import calculatebodyfat.composeapp.generated.resources.close
 import calculatebodyfat.composeapp.generated.resources.details_calcul
 import calculatebodyfat.composeapp.generated.resources.essential
@@ -44,8 +48,10 @@ import calculatebodyfat.composeapp.generated.resources.gender
 import calculatebodyfat.composeapp.generated.resources.healthy
 import calculatebodyfat.composeapp.generated.resources.height
 import calculatebodyfat.composeapp.generated.resources.hip
+import calculatebodyfat.composeapp.generated.resources.history_navitem
 import calculatebodyfat.composeapp.generated.resources.imperial_in
 import calculatebodyfat.composeapp.generated.resources.imperial_lb
+import calculatebodyfat.composeapp.generated.resources.info_navitem
 import calculatebodyfat.composeapp.generated.resources.leanMass
 import calculatebodyfat.composeapp.generated.resources.male
 import calculatebodyfat.composeapp.generated.resources.metrico_cm
@@ -66,6 +72,7 @@ import org.smcompany.calculbodyfat.model.Calcul
 import org.smcompany.calculbodyfat.navigation.Routes
 import org.smcompany.calculbodyfat.styles.colorBackgroundBottomBar
 import org.smcompany.calculbodyfat.styles.colorBackgroundTopAppBar
+import org.smcompany.calculbodyfat.styles.colorVerdeMilitar
 import org.smcompany.calculbodyfat.styles.tintIconClicked
 import org.smcompany.calculbodyfat.utilities.Gender
 
@@ -93,71 +100,81 @@ fun MyBottomBar(nav: Navigator, route: Routes) {
 @Composable
 fun ContentMyBottomBar(nav: Navigator, route: Routes) {
 
-    Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
-        Row(
-            verticalAlignment = Alignment.CenterVertically
-        ) {
-            IconButton(
-                onClick = {
-                    nav.navigate(
-                        Routes.Info.route,
-                        options = NavOptions(
-                            launchSingleTop = true // Evitar múltiples instancias
-                        )
-                    )
 
-                },
-            ) {
-                Icon(
-                    Icons.Default.Info,
-                    contentDescription = "Info",
-                    tint = if (route == Routes.Info) tintIconClicked else Color.White,
-                    modifier = Modifier.size(42.dp)
+    Row(
+        verticalAlignment = Alignment.CenterVertically,
+        horizontalArrangement = Arrangement.SpaceEvenly,
+        modifier = Modifier.fillMaxSize()
+    ) {
+        BottomNavItem(
+            icon = Icons.Default.Info,
+            label = stringResource(Res.string.info_navitem),
+            route = Routes.Info,
+            currentRoute = route,
+            onClick = {
+                nav.navigate(
+                    Routes.Info.route,
+                    options = NavOptions(
+                        launchSingleTop = true // Evitar múltiples instancias
+                    )
                 )
             }
+        )
 
-            Spacer(Modifier.width(30.dp))
+        //Spacer(Modifier.width(40.dp))
 
-            IconButton(
-                onClick = {
-                    nav.navigate(
-                        Routes.Calcul.route,
-                        options = NavOptions(
-                            launchSingleTop = true // Evitar múltiples instancias
-                        )
+        BottomNavItem(
+            icon = Icons.Default.Calculate,
+            label = stringResource(Res.string.calculate_navitem),
+            route = Routes.Calcul,
+            currentRoute = route,
+            onClick = {
+                nav.navigate(
+                    Routes.Calcul.route,
+                    options = NavOptions(
+                        launchSingleTop = true // Evitar múltiples instancias
                     )
-
-                },
-            ) {
-                Icon(
-                    Icons.Default.Calculate,
-                    contentDescription = "Calcul",
-                    tint = if (route == Routes.Calcul) tintIconClicked else Color.White,
-                    modifier = Modifier.size(42.dp)
                 )
             }
+        )
 
-            Spacer(Modifier.width(30.dp))
+        //Spacer(Modifier.width(40.dp))
 
-            IconButton(
-                onClick = {
-                    nav.navigate(
-                        Routes.History.route,
-                        options = NavOptions(
-                            launchSingleTop = true // Evitar múltiples instancias
-                        )
+        BottomNavItem(
+            icon = Icons.AutoMirrored.Filled.Assignment,
+            label = stringResource(Res.string.history_navitem),
+            route = Routes.History,
+            currentRoute = route,
+            onClick = {
+                nav.navigate(
+                    Routes.History.route,
+                    options = NavOptions(
+                        launchSingleTop = true // Evitar múltiples instancias
                     )
-
-                },
-            ) {
-                Icon(
-                    Icons.AutoMirrored.Filled.Assignment,
-                    contentDescription = "History",
-                    tint = if (route == Routes.History) tintIconClicked else Color.White,
-                    modifier = Modifier.size(42.dp)
                 )
             }
-        }
+        )
+    }
+
+}
+
+@Composable
+fun BottomNavItem(
+    icon: ImageVector,
+    label: String,
+    route: Routes,
+    currentRoute: Routes,
+    onClick: () -> Unit
+) {
+    val colorTint = if (route == currentRoute) tintIconClicked else Color.White
+    Column(horizontalAlignment = Alignment.CenterHorizontally) {
+        Icon(
+            imageVector = icon,
+            contentDescription = label,
+            tint = colorTint,
+            modifier = Modifier.size(38.dp).clickable { onClick() }
+        )
+        Text(label, color = colorTint)
     }
 }
 
@@ -214,12 +231,22 @@ fun ResultDialog(
             }
         },
         confirmButton = {
-            Button(onClick = onSeeHistory) {
-                Text(stringResource(Res.string.see_history))
+            Button(
+                colors = ButtonDefaults.buttonColors(
+                    containerColor = colorVerdeMilitar
+                ),
+                onClick = onSeeHistory
+            ) {
+                Text(stringResource(Res.string.see_history), color = Color.White)
             }
         },
         dismissButton = {
-            TextButton(onClick = onDismiss) {
+            Button(
+                colors = ButtonDefaults.buttonColors(
+                    containerColor = MaterialTheme.colorScheme.background
+                ),
+                onClick = onDismiss
+            ) {
                 Text(
                     stringResource(Res.string.close),
                     color = MaterialTheme.colorScheme.onBackground,
@@ -321,11 +348,16 @@ fun DetailsDialog(
             }
         },
         confirmButton = {
-            TextButton(onClick = onDismiss) {
+            Button(
+                colors = ButtonDefaults.buttonColors(
+                    containerColor = MaterialTheme.colorScheme.background
+                ),
+                onClick = onDismiss
+            ) {
                 Text(
                     stringResource(Res.string.close),
                     color = MaterialTheme.colorScheme.onBackground,
-                    fontWeight = FontWeight.SemiBold
+                    fontWeight = FontWeight.Bold
                 )
             }
         }
